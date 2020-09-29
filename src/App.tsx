@@ -6,7 +6,7 @@ import 'typeface-roboto';
 import contentHash from 'content-hash';
 import Web3Modal from "web3modal";
 import Web3 from 'web3';
-import Header from './components/Header';
+import { Header } from './components';
 import Lading from './pages/Lading';
 import Dashboard from './pages/Dashboard';
 import NewStickerPack from './pages/NewStickerPack';

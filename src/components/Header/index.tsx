@@ -1,6 +1,7 @@
 import React from 'react'
-import logo from '../logo.svg'
-import newStickerPack from '../icons/newStickerPack.svg'
+import logo from '../../logo.svg'
+import newStickerPack from '../../icons/newStickerPack.svg'
+import './style.scss'
 
 type HeaderProps = { account: string }
 

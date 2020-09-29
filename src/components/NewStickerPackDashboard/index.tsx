@@ -1,5 +1,6 @@
 import React from 'react'
-import plus from '../icons/plus.svg'
+import plus from '../../icons/plus.svg'
+import './style.scss'
 
 type NewStickerPackDashboardProps = { goToNewStickerPackPage: () => void }
 

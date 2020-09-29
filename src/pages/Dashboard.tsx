@@ -1,5 +1,5 @@
 import React from 'react'
-import NewStickerPackDashboard from '../components/NewStickerPackDashboard'
+import { NewStickerPackDashboard } from '../components'
 
 type DashboardProps = { goToNewStickerPackPage: () => void }
 
