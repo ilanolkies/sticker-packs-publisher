@@ -51,3 +51,18 @@ h3 {
 
   color: #000000;
 }
+
+.t_and_p {
+  position: absolute;
+  left: 24px;
+  bottom: 0px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  /* or 150% */
+
+  color: #939BA1;
+}

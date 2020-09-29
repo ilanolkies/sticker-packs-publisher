@@ -1,73 +1,58 @@
 .landing {
   text-align: center;
-}
 
-.landing-muted {
-  max-width: 360px;
-  /* 15 Body */
+  .landing-muted {
+    max-width: 360px;
+    /* 15 Body */
 
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 22px;
-  /* or 147% */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    /* or 147% */
 
-  text-align: center;
+    text-align: center;
 
-  /* Primary/Dark Grey */
+    /* Primary/Dark Grey */
 
-  color: #939BA1;
-}
+    color: #939BA1;
+  }
 
-.landing-tandp {
-  position: absolute;
-  left: 24px;
-  bottom: 0px;
+  .landing-connenct {
+    /* Auto Layout */
 
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 18px;
-  /* or 150% */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 11px 0px 0px 16px;
 
-  color: #939BA1;
-}
+    width: 140px;
+    height: 44px;
 
-.landing-connenct {
-  /* Auto Layout */
+    /* Primary/Light Accent Blue */
 
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 11px 0px 0px 16px;
+    background: #ECEFFC;
+    border-radius: 8px;
 
-  width: 140px;
-  height: 44px;
+    /* Inside Auto Layout */
 
-  /* Primary/Light Accent Blue */
+    flex: none;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 0px 0px;
 
-  background: #ECEFFC;
-  border-radius: 8px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    /* identical to box height, or 147% */
 
-  /* Inside Auto Layout */
+    text-align: center;
 
-  flex: none;
-  order: 0;
-  align-self: center;
-  flex-grow: 0;
-  margin: 0px 0px;
+    /* Primary/Accent Blue */
 
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
-  /* identical to box height, or 147% */
-
-  text-align: center;
-
-  /* Primary/Accent Blue */
-
-  color: #4360DF;
+    color: #4360DF;
+  }
 }

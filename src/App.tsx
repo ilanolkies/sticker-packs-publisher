@@ -652,7 +652,7 @@ const Home = (props: any) => {
         }
       </div>
     }
-    <p className="landing-tandp">
+    <p className="t_and_p">
       <b>Status Sitckers</b><br />
       Terms • Privacy
     </p>{/* add links */}
