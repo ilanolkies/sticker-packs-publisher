@@ -1,3 +1,17 @@
 .new-sticker-pack-page-container {
   padding: 60px 130px;
+
+  .new-sticker-pack-section {
+    /* Primary/White */
+
+    background: #FFFFFF;
+    /* Primary/Light Grey */
+
+    border: 1px solid #EEF2F5;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    padding: 24px;
+    margin: 5px;
+  }
 }
