@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import 'typeface-roboto';
-import Web3Modal from "web3modal";
 import Web3 from 'web3';
 import { Header } from './components';
 import { Landing, Dashboard, NewStickerPack } from './pages';
-
+import { web3Modal } from './lib'
 // draft: globals
-
-const web3Modal = new Web3Modal({
-  cacheProvider: true,
-  providerOptions: []
-});
 
 const DASHBOARD_PAGE = 'DASHBOARD_PAGE'
 const NEW_STICKER_PACK_PAGE = 'NEW_STICKER_PACK_PAGE'
