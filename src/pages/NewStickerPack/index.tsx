@@ -1,4 +1,5 @@
 import React from 'react'
+import './style.scss'
 
 export default () => <div className="new-sticker-pack-page">
   <div className="new-sticker-pack-page-container">

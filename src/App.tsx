@@ -7,9 +7,7 @@ import contentHash from 'content-hash';
 import Web3Modal from "web3modal";
 import Web3 from 'web3';
 import { Header } from './components';
-import Lading from './pages/Lading';
-import Dashboard from './pages/Dashboard';
-import NewStickerPack from './pages/NewStickerPack';
+import { Landing, Dashboard, NewStickerPack } from './pages';
 
 // https://cloudflare-ipfs.com/ipfs/QmQRmKoVi5a1CCWDNUFPRdEixMQfsZ2ECC5e2nQF1Gwi86/
 
@@ -641,7 +639,7 @@ const Home = (props: any) => {
 
   return <>
     {
-      !connected ? <Lading connect={connect} /> : <div className="app">
+      !connected ? <Landing connect={connect} /> : <div className="app">
         <Header account={accounnt} />
         {
           (function () {
