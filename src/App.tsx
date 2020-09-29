@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import 'typeface-roboto';
-import Web3 from 'web3';
 import { Header } from './components';
 import { Landing, Dashboard, NewStickerPack } from './pages';
 import { web3Modal, subscribeProvider, initWeb3 } from './lib'
+import './style.scss'
 // draft: globals
 
 const DASHBOARD_PAGE = 'DASHBOARD_PAGE'
@@ -14,7 +14,7 @@ const DEFAULT_CONNECTED = false
 const DEFAULT_ACCOUNT = ''
 const DEFAULT_CHAIN_ID = ''
 
-const Home = (props: any) => {
+const App = (props: any) => {
   // draft: state
 
   // wallet
@@ -33,7 +33,7 @@ const Home = (props: any) => {
   // navigation
   const [currentPage, setCurrentPage] = useState(DASHBOARD_PAGE)
 
-  const goToNewStickerPackPage = () => { console.log('hellos'); setCurrentPage(NEW_STICKER_PACK_PAGE) }
+  const goToNewStickerPackPage = () => setCurrentPage(NEW_STICKER_PACK_PAGE)
 
   // web3modal connect
   const connect = () => web3Modal.connect().then(provider => {
@@ -56,9 +56,9 @@ const Home = (props: any) => {
   })
 
   // draft: operations
-  return <>
+  return <div className="app">
     {
-      !connected ? <Landing connect={connect} /> : <div className="app">
+      !connected ? <Landing connect={connect} /> : <div className="app-container">
         <Header account={accounnt} />
         {
           (function () {
@@ -77,22 +77,7 @@ const Home = (props: any) => {
     </p>{/* add links */}
 
     {/* draft: render */}
-  </>
-};
-
-var containerStyle = {
-  display: 'flex',
-  justifyContent: "center",
-  alignItems: "center",
-  height: "100vh"
-};
-
-function App() {
-  return (
-    <div style={containerStyle}>
-      <Home />
-    </div>
-  );
+  </div>
 }
 
-export default App;
+export default App
