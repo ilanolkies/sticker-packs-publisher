@@ -16,3 +16,57 @@ code {
 #form > * {
   margin: 10px;
 }
+
+.landing {
+  text-align: center;
+}
+
+.landing-header {
+  /* 22 Headline Bold */
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  /* identical to box height, or 136% */
+
+  letter-spacing: -0.2px;
+
+  /* Primary/Black */
+
+  color: #000000;
+}
+
+.landing-muted {
+  max-width: 360px;
+  /* 15 Body */
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 22px;
+  /* or 147% */
+
+  text-align: center;
+
+  /* Primary/Dark Grey */
+
+  color: #939BA1;
+}
+
+.landing-tandp {
+  position: absolute;
+  left: 24px;
+  bottom: 0px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  /* or 150% */
+
+  color: #939BA1;
+}

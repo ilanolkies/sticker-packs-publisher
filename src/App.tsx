@@ -5,6 +5,7 @@ import CloudDone from '@material-ui/icons/CloudDone';
 import 'typeface-roboto';
 import contentHash from 'content-hash';
 import Web3 from 'web3';
+import Lading from './pages/Lading';
 
 // https://cloudflare-ipfs.com/ipfs/QmQRmKoVi5a1CCWDNUFPRdEixMQfsZ2ECC5e2nQF1Gwi86/
 
@@ -609,6 +610,10 @@ const Home = (props: any) => {
   };
 
   const complete = name.length != 0 && author.length != 0 && thumbnail.length != 0 && preview.length != 0 && stickers.length != 0;
+
+  return (
+    <Lading />
+  )
 
   return (
     <div id="form" style={divStyle}>
