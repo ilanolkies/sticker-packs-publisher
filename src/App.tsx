@@ -9,6 +9,7 @@ import Web3 from 'web3';
 import Header from './components/Header';
 import Lading from './pages/Lading';
 import Dashboard from './pages/Dashboard';
+import NewStickerPack from './pages/NewStickerPack';
 
 // https://cloudflare-ipfs.com/ipfs/QmQRmKoVi5a1CCWDNUFPRdEixMQfsZ2ECC5e2nQF1Gwi86/
 
@@ -572,6 +573,9 @@ const web3Modal = new Web3Modal({
   providerOptions: []
 });
 
+const DASHBOARD_PAGE = 'DASHBOARD_PAGE'
+const NEW_STICKER_PACK_PAGE = 'NEW_STICKER_PACK_PAGE'
+
 const Home = (props: any) => {
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
@@ -582,9 +586,16 @@ const Home = (props: any) => {
   const [stickers, setStickers] = useState([]);
   const [hash, setHash] = useState("");
 
+  // wallet
   const [connected, setConnected] = useState(false)
   const [accounnt, setAccount] = useState('')
 
+  // navigation
+  const [currentPage, setCurrentPage] = useState(DASHBOARD_PAGE)
+
+  const goToNewStickerPackPage = () => { console.log('hellos'); setCurrentPage(NEW_STICKER_PACK_PAGE) }
+
+  // web3modal connect
   const connect = () => web3Modal.connect().then(provider => {
     setConnected(true)
     const web3 = new Web3(provider)
@@ -632,7 +643,15 @@ const Home = (props: any) => {
     {
       !connected ? <Lading connect={connect} /> : <div className="app">
         <Header account={accounnt} />
-        <Dashboard />
+        {
+          (function () {
+            switch (currentPage) {
+              case DASHBOARD_PAGE: return <Dashboard goToNewStickerPackPage={goToNewStickerPackPage} />
+              case NEW_STICKER_PACK_PAGE: return <NewStickerPack />
+              default: throw new Error('Invalid page')
+            }
+          })()
+        }
       </div>
     }
     <p className="landing-tandp">

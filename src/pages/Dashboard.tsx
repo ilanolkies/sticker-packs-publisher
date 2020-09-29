@@ -1,8 +1,10 @@
 import React from 'react'
 import NewStickerPackDashboard from '../components/NewStickerPackDashboard'
 
-export default () => <div className="dashboard">
+type DashboardProps = { goToNewStickerPackPage: () => void }
+
+export default ({ goToNewStickerPackPage }: DashboardProps) => <div className="dashboard">
   <div className="dashboard-container">
-    <NewStickerPackDashboard />
+    <NewStickerPackDashboard goToNewStickerPackPage={goToNewStickerPackPage} />
   </div>
 </div>
