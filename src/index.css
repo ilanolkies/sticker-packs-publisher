@@ -47,9 +47,15 @@ h3 {
 }
 
 .t_and_p {
-  position: absolute;
+  /* https://stackoverflow.com/questions/2571573/css-footer-position-stick-to-bottom-of-browser */
   left: 24px;
   bottom: 0px;
+  bottom:0;
+  position:fixed;
+  z-index:150;
+  _position:absolute;
+  _top:expression(eval(document.documentElement.scrollTop+
+      (document.documentElement.clientHeight-this.offsetHeight)));
 
   font-family: Inter;
   font-style: normal;

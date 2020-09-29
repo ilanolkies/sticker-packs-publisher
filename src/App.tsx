@@ -56,28 +56,30 @@ const App = (props: any) => {
   })
 
   // draft: operations
-  return <div className="app">
-    {
-      !connected ? <Landing connect={connect} /> : <div className="app-container">
-        <Header account={accounnt} />
-        {
-          (function () {
-            switch (currentPage) {
-              case DASHBOARD_PAGE: return <Dashboard goToNewStickerPackPage={goToNewStickerPackPage} />
-              case NEW_STICKER_PACK_PAGE: return <NewStickerPack />
-              default: throw new Error('Invalid page')
-            }
-          })()
-        }
-      </div>
-    }
+  return <>
+    <div className="app">
+      {
+        !connected ? <Landing connect={connect} /> : <div className="app-container">
+          <Header account={accounnt} />
+          {
+            (function () {
+              switch (currentPage) {
+                case DASHBOARD_PAGE: return <Dashboard goToNewStickerPackPage={goToNewStickerPackPage} />
+                case NEW_STICKER_PACK_PAGE: return <NewStickerPack />
+                default: throw new Error('Invalid page')
+              }
+            })()
+          }
+        </div>
+      }
+
+      {/* draft: render */}
+    </div>
     <p className="t_and_p">
       <b>Status Sitckers</b><br />
       Terms • Privacy
     </p>{/* add links */}
-
-    {/* draft: render */}
-  </div>
+  </>
 }
 
 export default App
