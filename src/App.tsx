@@ -8,6 +8,7 @@ import Web3Modal from "web3modal";
 import Web3 from 'web3';
 import Header from './components/Header';
 import Lading from './pages/Lading';
+import Dashboard from './pages/Dashboard';
 
 // https://cloudflare-ipfs.com/ipfs/QmQRmKoVi5a1CCWDNUFPRdEixMQfsZ2ECC5e2nQF1Gwi86/
 
@@ -631,6 +632,7 @@ const Home = (props: any) => {
     {
       !connected ? <Lading connect={connect} /> : <div className="app">
         <Header account={accounnt} />
+        <Dashboard />
       </div>
     }
     <p className="landing-tandp">
