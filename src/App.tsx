@@ -4,6 +4,7 @@ import Input from '@material-ui/core/Input';
 import CloudDone from '@material-ui/icons/CloudDone';
 import 'typeface-roboto';
 import contentHash from 'content-hash';
+import Web3Modal from "web3modal";
 import Web3 from 'web3';
 import Lading from './pages/Lading';
 
@@ -564,6 +565,11 @@ const ABI = [
   }
 ];
 
+const web3Modal = new Web3Modal({
+  cacheProvider: true,
+  providerOptions: []
+});
+
 const Home = (props: any) => {
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
@@ -575,8 +581,13 @@ const Home = (props: any) => {
   const [hash, setHash] = useState("");
 
   const [connected, setConnected] = useState(false)
+  const [accounnt, setAccount] = useState('')
 
-  const connect = () => setConnected(true)
+  const connect = () => web3Modal.connect().then(provider => {
+    setConnected(true)
+    const web3 = new Web3(provider)
+    return web3.eth.getAccounts().then(accounts => setAccount(accounts[0]))
+  })
 
   const uploadDescription = async (_: any) => {
     const res = await uploadFile(name, author, thumbnail, preview, stickers);
@@ -617,7 +628,7 @@ const Home = (props: any) => {
 
   return <>
     <Lading connect={connect} />
-    {connected && 'connected'}
+    {accounnt}
   </>
 
   return (
