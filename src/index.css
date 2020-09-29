@@ -67,7 +67,7 @@ code {
   text-align: center;
 }
 
-.landing-header {
+h2 {
   /* 22 Headline Bold */
 
   font-style: normal;
@@ -79,6 +79,20 @@ code {
   letter-spacing: -0.2px;
 
   /* Primary/Black */
+
+  color: #000000;
+}
+
+h3 {
+  /* Main 15px (Medium) */
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  /* identical to box height, or 160% */
+
 
   color: #000000;
 }
@@ -197,4 +211,8 @@ code {
 
 .dashborad-new-sticker-pack-content p {
   color: #4360DF;
+}
+
+.new-sticker-pack-page-container {
+  padding: 60px 130px;
 }
