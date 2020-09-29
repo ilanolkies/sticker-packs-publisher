@@ -574,6 +574,10 @@ const Home = (props: any) => {
   const [stickers, setStickers] = useState([]);
   const [hash, setHash] = useState("");
 
+  const [connected, setConnected] = useState(false)
+
+  const connect = () => setConnected(true)
+
   const uploadDescription = async (_: any) => {
     const res = await uploadFile(name, author, thumbnail, preview, stickers);
     setHash(res.Hash);
@@ -611,9 +615,10 @@ const Home = (props: any) => {
 
   const complete = name.length != 0 && author.length != 0 && thumbnail.length != 0 && preview.length != 0 && stickers.length != 0;
 
-  return (
-    <Lading />
-  )
+  return <>
+    <Lading connect={connect} />
+    {connected && 'connected'}
+  </>
 
   return (
     <div id="form" style={divStyle}>

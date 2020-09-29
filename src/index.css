@@ -70,3 +70,41 @@ code {
 
   color: #939BA1;
 }
+
+.landing-connenct {
+/* Auto Layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 11px 0px 0px 16px;
+
+width: 140px;
+height: 44px;
+
+/* Primary/Light Accent Blue */
+
+background: #ECEFFC;
+border-radius: 8px;
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 0;
+align-self: center;
+flex-grow: 0;
+margin: 0px 0px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 22px;
+/* identical to box height, or 147% */
+
+text-align: center;
+
+/* Primary/Accent Blue */
+
+color: #4360DF;
+}
