@@ -3,18 +3,32 @@ import 'typeface-roboto';
 import Web3 from 'web3';
 import { Header } from './components';
 import { Landing, Dashboard, NewStickerPack } from './pages';
-import { web3Modal } from './lib'
+import { web3Modal, subscribeProvider, initWeb3 } from './lib'
 // draft: globals
 
 const DASHBOARD_PAGE = 'DASHBOARD_PAGE'
 const NEW_STICKER_PACK_PAGE = 'NEW_STICKER_PACK_PAGE'
 
+const DEFAULT_WEB3 = {}
+const DEFAULT_CONNECTED = false
+const DEFAULT_ACCOUNT = ''
+const DEFAULT_CHAIN_ID = ''
+
 const Home = (props: any) => {
   // draft: state
 
   // wallet
-  const [connected, setConnected] = useState(false)
-  const [accounnt, setAccount] = useState('')
+  const [web3, setWeb3] = useState(DEFAULT_WEB3)
+  const [connected, setConnected] = useState(DEFAULT_CONNECTED)
+  const [accounnt, setAccount] = useState(DEFAULT_ACCOUNT)
+  const [chainId, setChainId] = useState(DEFAULT_CHAIN_ID)
+
+  const reset = () => {
+    setWeb3(DEFAULT_WEB3)
+    setConnected(DEFAULT_CONNECTED)
+    setAccount(DEFAULT_ACCOUNT)
+    setAccount(DEFAULT_CHAIN_ID)
+  }
 
   // navigation
   const [currentPage, setCurrentPage] = useState(DASHBOARD_PAGE)
@@ -23,9 +37,22 @@ const Home = (props: any) => {
 
   // web3modal connect
   const connect = () => web3Modal.connect().then(provider => {
-    setConnected(true)
-    const web3 = new Web3(provider)
-    return web3.eth.getAccounts().then(accounts => setAccount(accounts[0]))
+    const web3 = initWeb3(provider)
+
+    subscribeProvider(provider, {
+      handleClose: reset,
+      handleAccountsChanged: reset,
+      handleChainChanged: reset,
+      handleNetworkchanged: reset
+    })
+
+    return Promise.all([
+      web3.eth.getAccounts().then((accounts: string[]) => setAccount(accounts[0])),
+      web3.eth.chainId().then(setChainId)
+    ]).then(() => {
+      setConnected(true)
+      setWeb3(web3)
+    })
   })
 
   // draft: operations
