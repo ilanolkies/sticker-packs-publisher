@@ -67,6 +67,36 @@ h3 {
 
 }
 
-hr { display: block; height: 1px;
-    border: 0; border-top: 1px solid #EEF2F5;
-    margin: 1em 0; padding: 0; }
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #EEF2F5;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.muted-text {
+  margin: auto;
+  max-width: 200px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  /* or 133% */
+  color: #939BA1;
+
+  .strong {
+    color: black;
+  }
+
+  a {
+    color: #4360DF;
+    text-decoration: none;
+  }
+
+  a:active {
+    color: #4360DF;
+    text-decoration: none;
+  }
+}

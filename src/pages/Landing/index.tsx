@@ -14,6 +14,6 @@ export default ({ connect, loading, connecting }: LandingProps) => {
     <img src={logo} className="moving-elem" />
     <h2 className={`landing-header moving-elem${loadingClass}`}>Sell stickers. Earn SNT.</h2>
     <p className={`landing-muted moving-elem${loadingClass}`}>To publish stickers to the Status Sticker Market, first connect your Ethereum wallet.</p>
-    <Button className={`moving-elem${loadingClass}`} variant="contained" component="span" color="primary" onClick={connect} disabled={loading || connecting}>Conenct wallet</Button>
+    <Button className={`moving-elem${loadingClass}`} variant="contained" component="span" color="secondary" onClick={connect} disabled={loading || connecting}>Conenct wallet</Button>
   </div>
 }

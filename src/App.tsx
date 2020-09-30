@@ -10,6 +10,7 @@ import './style.scss'
 const DASHBOARD_PAGE = 'DASHBOARD_PAGE'
 const NEW_STICKER_PACK_PAGE = 'NEW_STICKER_PACK_PAGE'
 
+const DEFAULT_PAGE = NEW_STICKER_PACK_PAGE // useful for development - start from a desired page
 const DEFAULT_LOADING = true
 const DEFAULT_CONNECTING = false
 const DEFAULT_WEB3 = {}
@@ -37,7 +38,7 @@ const App = (props: any) => {
   }
 
   // navigation
-  const [currentPage, setCurrentPage] = useState(DASHBOARD_PAGE)
+  const [currentPage, setCurrentPage] = useState(DEFAULT_PAGE)
 
   const goToDashboardPage = () => setCurrentPage(DASHBOARD_PAGE)
   const goToNewStickerPackPage = () => setCurrentPage(NEW_STICKER_PACK_PAGE)

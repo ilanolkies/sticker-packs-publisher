@@ -1,5 +1,7 @@
 .new-sticker-pack-page-container {
-  padding: 60px 130px;
+  padding: 60px 0px;
+  max-width: 764px;
+  margin: auto;
 
   .new-sticker-pack-section {
     /* Primary/White */
@@ -11,7 +13,12 @@
     box-sizing: border-box;
     border-radius: 8px;
 
-    padding: 24px;
-    margin: 5px;
+    padding: 24px 24px 40px 24px;
+    margin: 16px 0px;
+
+    .new-sticker-pack-section-header h3 img {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
   }
 }
