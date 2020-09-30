@@ -15,25 +15,56 @@
     max-height: 54px;
     text-align: left;
     padding: 4px 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    /* or 138% */
+    /* Primary/Accent Blue */
+    color: #4360DF;
   }
 
   .header-logo {
     grid-column: 2 / 3;
     grid-row: 1;
-    max-height: 54px;
+    max-height: 44px;
     text-align: center;
+    padding: 5px;
 
     img {
-      max-height: 50px;
-      padding: 2px;
+      height: 44px;
     }
   }
 
-  .header-account {
+  .header-account-container {
     grid-column: 3 / 3;
     grid-row: 1;
     max-height: 54px;
-    text-align: right;
     padding: 4px 20px;
+
+    .header-account {
+      text-align: right;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 22px;
+      /* identical to box height, or 169% */
+
+      /* Primary/Black */
+
+      color: #000000;
+
+      /* Inside Auto Layout */
+
+      flex: none;
+      order: 1;
+      align-self: center;
+      flex-grow: 0;
+    }
+
+    img {
+      top: 3px;
+      position: relative;
+    }
   }
 }
