@@ -3,6 +3,7 @@ import 'typeface-roboto';
 import { Header } from './components';
 import { Landing, Dashboard, NewStickerPack } from './pages';
 import { web3Modal, subscribeProvider, initWeb3 } from './lib'
+import newStickerPack from './icons/newStickerPack.svg'
 import './style.scss'
 // draft: globals
 
@@ -38,6 +39,7 @@ const App = (props: any) => {
   // navigation
   const [currentPage, setCurrentPage] = useState(DASHBOARD_PAGE)
 
+  const goToDashboardPage = () => setCurrentPage(DASHBOARD_PAGE)
   const goToNewStickerPackPage = () => setCurrentPage(NEW_STICKER_PACK_PAGE)
 
   // web3modal connect
@@ -84,12 +86,25 @@ const App = (props: any) => {
     <div className="app">
       {
         !connected ? <Landing connect={connect} loading={loading} connecting={connecting} /> : <div className="app-container">
-          <Header account={accounnt} />
           {
             (function () {
               switch (currentPage) {
-                case DASHBOARD_PAGE: return <Dashboard goToNewStickerPackPage={goToNewStickerPackPage} />
-                case NEW_STICKER_PACK_PAGE: return <NewStickerPack />
+                case DASHBOARD_PAGE: return <>
+                  <Header
+                    account={accounnt}
+                    toggle={<p className="header-new-sticker"><img src={newStickerPack} /> New sticker pack</p>}
+                    onToggle={goToNewStickerPackPage}
+                  />
+                  <Dashboard goToNewStickerPackPage={goToNewStickerPackPage} />
+                </>
+                case NEW_STICKER_PACK_PAGE: return <>
+                  <Header
+                    account={accounnt}
+                    toggle={<p className="header-new-sticker">← Back to dashboard</p>}
+                    onToggle={goToDashboardPage}
+                  />
+                  <NewStickerPack />
+                </>
                 default: throw new Error('Invalid page')
               }
             })()
