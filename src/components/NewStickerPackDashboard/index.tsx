@@ -1,16 +1,13 @@
 import React from 'react'
 import plus from '../../icons/plus.svg'
+import { DashedBox } from '../'
 import './style.scss'
 
 type NewStickerPackDashboardProps = { goToNewStickerPackPage: () => void }
 
 export default ({ goToNewStickerPackPage }: NewStickerPackDashboardProps) => <div className="dashborad-new-sticker-pack">
-    <div className="dashborad-new-sticker-pack-border" onClick={goToNewStickerPackPage}>
-      <div className="dashborad-new-sticker-pack-container">
-        <div className="dashborad-new-sticker-pack-content">
-          <img src={plus} />
-          <p>new sitcker pack</p>
-        </div>
-    </div>
-  </div>
+  <DashedBox onClick={goToNewStickerPackPage}>
+    <img src={plus} />
+    <p>new sitcker pack</p>
+  </DashedBox>
 </div>
