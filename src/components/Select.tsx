@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from '@material-ui/core/Select'
 
-export default ({ children, label, onChange }) => <Select
+export default ({ children, label, onChange, ...props }) => <Select
   native
   fullWidth
   onChange={onChange}
@@ -10,6 +10,7 @@ export default ({ children, label, onChange }) => <Select
     name: 'age',
     id: 'outlined-age-native-simple',
   }}
+  {...props}
 >
   {children}
 </Select>
